@@ -9,7 +9,7 @@
 
 <body ng-app="Lab">
 
-    <div class="container" ng-controller="TodoCtrl as todo">
+    <div class="container" ng-controller="TaskCtrl as todo">
         <h1>Tasks</h1>
         <ul>
             <li ng-repeat="task in todo.tasks">{{ task.name }} <a ng-click="todo.editTask(task)">edit</a>
@@ -29,7 +29,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/controllerstuff/taskCtrl.js"></script>
+    <script src="js/controllers/TaskCtrl.js"></script>
+    <script src="js/factories/TaskFactory.js"></script>
 
 </body>
 </html>
