@@ -9,18 +9,18 @@
 
 <body ng-app="Lab">
 
-    <div class="container" ng-controller="TaskCtrl as todo">
+    <div class="container">
         <h1>Tasks</h1>
-        <ul>
-            <li ng-repeat="task in todo.tasks">{{ task.name }} <a ng-click="todo.editTask(task)">edit</a>
+        <ul ng-controller="TaskListCtrl as listctrl">
+            <li ng-repeat="task in listctrl.tasks">{{ task.name }} <a ng-click="listctrl.editTask(task)">edit</a>
 
-            <a ng-click="todo.deleteTask(task)">delete</a></li>
+            <a ng-click="listctrl.deleteTask(task)">delete</a></li>
         </ul>
 
-        <form role="form" name="updateTaskForm" ng-submit="todo.updateTask(todo.task)" novalidate>
+        <form role="form" name="updateTaskForm" ng-controller="TaskFormCtrl as formctrl" ng-submit="formctrl.updateTask(formctrl.task)" novalidate>
             <div class="form-group">
                 <label>Task Name</label>
-                <input type="text" class="form-control" name="name" ng-model="todo.task.name" ng-model-options="{ updateOn: submit }">
+                <input type="text" class="form-control" name="name" ng-model="formctrl.task.name" ng-model-options="{ updateOn: submit }">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -29,7 +29,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/controllers/TaskCtrl.js"></script>
+    <script src="js/controllers/TaskListCtrl.js"></script>
+    <script src="js/controllers/TaskFormCtrl.js"></script>
     <script src="js/factories/TaskFactory.js"></script>
 
 </body>
