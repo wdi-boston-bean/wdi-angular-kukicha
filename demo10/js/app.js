@@ -6,7 +6,8 @@
     angular
         .module('Demo')
         .config(demoConfig)
-        .controller('NavbarCtrl', NavbarCtrl);
+        .controller('NavbarCtrl', NavbarCtrl)
+        .controller('FooterCtrl', FooterCtrl);
 
     function demoConfig($routeProvider) {
         $routeProvider
