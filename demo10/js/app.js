@@ -19,6 +19,9 @@
             .when('/contact', {
                 templateUrl: 'templates/contact.html'
             })
+            .when('/shop', {
+                templateUrl: 'templates/shop.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -31,6 +34,16 @@
 
         vm.isActive = function(viewLocation) {
             return viewLocation === $location.path();
+        };
+    }
+
+    FooterCtrl.$inject = ['$location'];
+
+    function FooterCtrl($location) {
+        var vm = this;
+
+        vm.isContactPage = function () {
+            return '/contact' === $location.path();
         };
     }
 
